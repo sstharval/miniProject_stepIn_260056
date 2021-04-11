@@ -1,3 +1,4 @@
 # miniProject_stepIn_260056
-Loan Calculator 
-
+## **Loan Calculator**
+- The given application is used for the calculation of *Every Month Installment* (**EMI**) for a given of *Principal Amount* (**P**), *Rate of Interest* (**R**) and  *Duration of Loan* (**N**). The application will be calculate the total sum paid in a loan including interests. The application will display Interest Amount, Principal amount paid every month in the output.
+- Nowadays, lenders have started lending a choice for consumers to choose even the interest rate(within certain limits) applied along with the period. The application will find an optimum solution where consumers will pay the minimum sum to the lender to repay the loan. This will help consumers in analysing their money going into repaying the debt.
