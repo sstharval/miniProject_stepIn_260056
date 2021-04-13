@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2021
  * 
  */
+
 #include <stdio.h>
 #include <ctype.h>
 #include <conio.h>
@@ -26,16 +27,19 @@ int main(){
     int totalMonths = 0;
     float perMonth_interest  = 0;
     char choice;
+    char choice_compound[10];
     float loanInstallment = 0;
     float principalPay_perMonth = 0;
     float monthlyInterest = 0;
+    float principalPayment = 0;
     float principalRemaining = 0;
-
+    FILE *filePTR_amortized = NULL ;
+    FILE *filePTR_compound = NULL ;
     //Starts The Application
     printf("\n\t\t Welcome to Loan Aid Application \t\t\n");
     printf("\t\t This Application helps you find \t\t\n");
     printf("\t\t your monthly installment  \t\t\n");
-    printf("Enter Your Principal Amount =");
+    printf("Enter Your Principal Amount = ");
     scanf("%f", &principalAmount);
     printf("\nEnter Your Annual Interest Rate = ");
     scanf("%f", &interestAnnual);
@@ -68,21 +72,43 @@ int main(){
     printf("%c", choice);
     switch(choice){
         case 'A':
-            puts("\t\t \n\t\tThis part for application is under construction");
+            puts("Your Monthly Installment  = ");
+            filePTR_compound = fopen("Installment_compound.csv", "w+");
+            fprintf(filePTR_compound , "Month, Interest Paid(A), Principal Paid(B), EMI(A+B), Principal Pending\n");
+            for(int countPrintLoop = 1 ; countPrintLoop <= totalMonths; countPrintLoop++){
+                monthlyInterest = perMonth_interest * principalAmount;
+                printf("Do you want to pay towards principal ? \n \tYES\t\tor\t\tNO\n");
+                gets(choice_compound);
+                if(strcmp(choice_compound , "YES") == 0)
+                {
+                    puts("Enter your Amount = ");
+                    scanf("%f", &principalPayment);
+                    principalRemaining = principalAmount - principalPayment;
+                }
+                else if(strcmp(choice_compound , "YES") != 0)
+                {
+                    principalPayment = 0;
+                }
+                fprintf(filePTR_compound," %d, %f, %f, %f, %f \n ", countPrintLoop, round(monthlyInterest), round(principalPayment), round(monthlyInterest), round(principalRemaining) );                    
+            }
+            fclose(filePTR_compound);
+
             break;
         case 'B':
-            puts("Your Monthly Installment  =");
+            puts("Your Monthly Installment  = ");
+            filePTR_amortized = fopen("Installment_amortized.csv", "w+");
+            fprintf(filePTR_amortized , "Month, Interest Paid(A), Principal Paid(B), EMI(A+B), Principal Pending\n");
             loanInstallment = round(everyMonthInstallment(&principalAmount, &perMonth_interest, &totalMonths ));
             printf("\t\t %f \n", loanInstallment);
-            puts("Month \t Interest Paid(A) \t Principal Paid(B) \t EMI(A+B) \t Principal Pending\n");
             for(int countPrintLoop = 1 ; countPrintLoop <= totalMonths ; countPrintLoop++){
                 monthlyInterest = perMonth_interest * principalAmount ;
                 principalPay_perMonth = loanInstallment - monthlyInterest ;
                 principalRemaining = principalAmount - principalPay_perMonth;
                 principalAmount = round(principalRemaining);
-                printf(" %d \t\t %f \t\t %f \t\t %f \t\t %f\n ", countPrintLoop, round(monthlyInterest), round(principalPay_perMonth), round(loanInstallment), round(principalRemaining) );
+                fprintf(filePTR_amortized," %d, %f, %f, %f, %f \n ", countPrintLoop, round(monthlyInterest), round(principalPay_perMonth), round(loanInstallment), round(principalRemaining) );               
             }
-
+            fclose(filePTR_amortized);
+            break;
     }
     return 0;
 }
