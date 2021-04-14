@@ -11,7 +11,7 @@ src/loanFunctions.c
 # All test source files
 TEST_SRC = src/loanFunctions.c\
 test/test_loanCalculator.c\
-unity/unity.c\
+Unity/unity.c\
 
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
