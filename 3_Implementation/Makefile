@@ -10,8 +10,8 @@ src/loanFunctions.c
 
 # All test source files
 TEST_SRC = src/loanFunctions.c\
-test/test.c\
-unity/unity.c\
+test/test_loanCalculator.c\
+unity/src/unity.c\
 
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
@@ -48,7 +48,7 @@ doc:
 
 # Build and run the unit tests
 test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
+	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) 
 	./$(TEST_OUTPUT)
 
 # Remove all the built files, invoke by `make clean`
