@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include <ctype.h>
-#include <conio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,10 +25,9 @@ int main(){
     int tenureMonths = 0;
     int totalMonths = 0;
     float perMonth_interest  = 0;
-    char choice;
+    char choice[10];
     char choice_compound[10];
     float loanInstallment = 0;
-    float principalPay_perMonth = 0;
     float monthlyInterest = 0;
     float principalPayment = 0;
     float principalRemaining = 0;
@@ -66,37 +64,30 @@ int main(){
      */
 
 
-    printf("\n\t\tPreferred Mode of Repayment for Loan \n");
-    printf("\n\t A - Traditional Compound Interest Method \n\t B - Amortization Method \n");
-    choice = toupper(getch());
-    printf("%c", choice);
-    switch(choice){
+    printf("\ntPreferred Mode of Repayment for Loan \n Choose between A & B and enter your choice accordingly- ");
+    printf("\n A - Traditional Compound Interest Method \nB - Amortization Method \n");
+    scanf("%s", choice);
+    switch(toupper(choice[0])){
         case 'A':
             puts("Your Monthly Installment  = ");
-            filePTR_compound = fopen("Installment_compound.csv", "w+");
+            filePTR_compound = fopen("output/Installment_compound.csv", "w+");
             fprintf(filePTR_compound , "Month, Interest Paid(A), Principal Paid(B), EMI(A+B), Principal Pending\n");
             for(int countPrintLoop = 1 ; countPrintLoop <= totalMonths; countPrintLoop++){
                 monthlyInterest = perMonth_interest * principalAmount;
-                printf("Do you want to pay towards principal ? \n \tYES\t\tor\t\tNO\n");
-                gets(choice_compound);
-                if(strcmp(choice_compound , "YES") == 0)
-                {
-                    puts("Enter your Amount = ");
-                    scanf("%f", &principalPayment);
-                    principalRemaining = principalAmount - principalPayment;
-                }
-                else if(strcmp(choice_compound , "YES") != 0)
-                {
-                    principalPayment = 0;
-                }
+                printf(" Month No.\t: %d\n Amount Towards Principal(Enter 0 if no amount)\t=  ", countPrintLoop);
+                scanf("%f", &principalPayment);
+                principalRemaining = principalAmount - principalPayment;
                 fprintf(filePTR_compound," %d, %f, %f, %f, %f \n ", countPrintLoop, round(monthlyInterest), round(principalPayment), round(monthlyInterest), round(principalRemaining) );                    
+                principalAmount = principalRemaining;
             }
+            printf("\nAfter the entire tenure of \t %d\t  months, you must pay Rs. \t %f \t to complete your loan \n" , totalMonths, principalAmount);
             fclose(filePTR_compound);
 
             break;
-        case 'B':
+        case 'B':   ;
+            float principalPay_perMonth = 0;
             puts("Your Monthly Installment  = ");
-            filePTR_amortized = fopen("Installment_amortized.csv", "w+");
+            filePTR_amortized = fopen("output/Installment_amortized.csv", "w+");
             fprintf(filePTR_amortized , "Month, Interest Paid(A), Principal Paid(B), EMI(A+B), Principal Pending\n");
             loanInstallment = round(everyMonthInstallment(&principalAmount, &perMonth_interest, &totalMonths ));
             printf("\t\t %f \n", loanInstallment);
@@ -108,7 +99,12 @@ int main(){
                 fprintf(filePTR_amortized," %d, %f, %f, %f, %f \n ", countPrintLoop, round(monthlyInterest), round(principalPay_perMonth), round(loanInstallment), round(principalRemaining) );               
             }
             fclose(filePTR_amortized);
+            printf("\nAfter the entire tenure of \t %d\t  months, you must pay Rs. \t %f \t to complete your loan \n" , totalMonths, principalAmount);
+
             break;
     }
+        printf("Note: Final amount can be negative also. Incase it comes out to be negative, lender will automatically will pay the sum.\n This application has not taken into account the other charges taken by lender.");
+
     return 0;
 }
+    
