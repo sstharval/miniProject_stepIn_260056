@@ -1,5 +1,5 @@
 # C Programming using PBL Approach
-![loanCalculator](https://github.com/sstharval/miniProject_stepIn_260056/blob/main/6_ImagesAndVideos/download.jfif)
+![loanCalculator](https://github.com/sstharval/miniProject_stepIn_260056/blob/main/6_ImagesAndVideos/loan.jfif)
 
 ## **Loan Calculator**
 
