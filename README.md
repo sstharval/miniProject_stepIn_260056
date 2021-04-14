@@ -15,5 +15,18 @@
 
     -   **Amortization Method** :   In this approach, the lender requires the loanee to pay the interest as well as principal in equal monthly installments (EMI). This is widely used method.
 
+## Folder Structure
+Folder             | Description
+-------------------| -------------------------------------------------
+`1_Requirements`   | Documents detailing requirements and research
+`2_Design`         | Documents specifying design details
+`3_Implementation` | All code and documentation along with output
+`4_Test_plan`      | Documents with test plans and procedures
+
+## Contributors List and Summary
+
+SF Id.    |      Name        |  Language Used   | Requirements |   Design   | Implementation | Report    
+----------|------------------|------------------|--------------|------------|----------------|----------
+`260056`  | Shubham Tharval  |       C          |   pending... |  pending...|       DONE     |  DONE
 
 ### Github Repo ID - miniProject_stepIn_260056
