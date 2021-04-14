@@ -11,18 +11,19 @@ src/loanFunctions.c
 # All test source files
 TEST_SRC = src/loanFunctions.c\
 test/test_loanCalculator.c\
-Unity/unity.c\
+unity/unity.c\
 
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
 # All include folders with header files
 INC	= -Iinc\
 -Iunity\
--lm\
+
 
 #Library Inlcudes
 #INCLUDE_LIBS = 
-INCLUDE_LIBS = -lcunit
+INCLUDE_LIBS = -lcunit\
+
 
 # Project Output name
 PROJECT_OUTPUT = $(BUILD)/$(PROJECT_NAME)

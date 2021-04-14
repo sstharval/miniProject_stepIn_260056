@@ -13,6 +13,7 @@ OK
  */
 
 #include "../Unity/unity.h"
+#include <math.h>
 
 /* Modify these two lines according to the project */
 #include <loanFunctions.h>
