@@ -1,4 +1,7 @@
 # C Programming using PBL Approach
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dcc866b8c7cf4e5ebcd9c3c5fce9eba6)](https://app.codacy.com/gh/sstharval/miniProject_stepIn_260056?utm_source=github.com&utm_medium=referral&utm_content=sstharval/miniProject_stepIn_260056&utm_campaign=Badge_Grade_Settings)
+
 ![loanCalculator](https://github.com/sstharval/miniProject_stepIn_260056/blob/main/6_ImagesAndVideos/loan.jfif)
 
 ## **Loan Calculator**
