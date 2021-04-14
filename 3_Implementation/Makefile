@@ -11,7 +11,7 @@ src/loanFunctions.c
 # All test source files
 TEST_SRC = src/loanFunctions.c\
 test/test_loanCalculator.c\
-unity/src/unity.c\
+unity/unity.c\
 
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
@@ -36,7 +36,7 @@ $(PROJECT_NAME):all
 .PHONY: run clean test doc all
 
 all: $(SRC) $(BUILD)
-	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out
+	gcc $(SRC) $(INC) -lm -o $(PROJECT_OUTPUT).out
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
@@ -48,7 +48,7 @@ doc:
 
 # Build and run the unit tests
 test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) 
+	gcc $(TEST_SRC) $(INC) -lm -o $(TEST_OUTPUT) 
 	./$(TEST_OUTPUT)
 
 # Remove all the built files, invoke by `make clean`

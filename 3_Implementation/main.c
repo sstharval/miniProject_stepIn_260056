@@ -66,7 +66,7 @@ int main(){
 
     printf("\ntPreferred Mode of Repayment for Loan \n Choose between A & B and enter your choice accordingly- ");
     printf("\n A - Traditional Compound Interest Method \nB - Amortization Method \n");
-    scanf("%s", choice);
+    scanf("%2s", choice);
     switch(toupper(choice[0])){
         case 'A':
             puts("Your Monthly Installment  = ");
