@@ -4,7 +4,7 @@ The Loan Calculator starts with asking the user about the Principal (P) , Annual
 accordingly the outout .csv file will be generated.
 
 ## Program Flow Diagram
-[Program Flow Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/3823ec75ffa8ac6258292c5b7709d32098069fd4/2_Architecture/FlowDiagram%20-UML.png)
+![Program Flow Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/3823ec75ffa8ac6258292c5b7709d32098069fd4/2_Architecture/FlowDiagram%20-UML.png)
 
 ## Explanation of Functions used
 functions used : 
@@ -23,11 +23,11 @@ functions used :
   output type - foat
   **Explanation** - In this function, 1st input paramater will be Principal, 2nd will be monthly interest applied and the 3rd paramter is totalMonths.
 
-[EMI Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/c931ec66bd9011663d1069720a02a5d311753b15/2_Architecture/emi-calculator-example-1.png)
+![EMI Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/c931ec66bd9011663d1069720a02a5d311753b15/2_Architecture/emi-calculator-example-1.png)
   
 ## Program Function Diagram (adopted from Class UML Diagram)
-[Function Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/c931ec66bd9011663d1069720a02a5d311753b15/2_Architecture/Functions%20File%20Design.png)
+![Function Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/c931ec66bd9011663d1069720a02a5d311753b15/2_Architecture/Functions%20File%20Design.png)
 
 ## Use Case Diagram
-[Use Case Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/c931ec66bd9011663d1069720a02a5d311753b15/2_Architecture/UseCase%20Diagram.png)
+![Use Case Diagram](https://github.com/sstharval/miniProject_stepIn_260056/blob/c931ec66bd9011663d1069720a02a5d311753b15/2_Architecture/UseCase%20Diagram.png)
 
