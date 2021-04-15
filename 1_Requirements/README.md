@@ -30,7 +30,7 @@ Benefits range from:
 
 6. Every Monthaly Installment (EMI) in Amortized Repayment **(A+B)**
 
-##Explaination
+# Explaination
 - In **Traditional Compound Interest Repayment Method**, the user will asked every month about the Amount of Monthly Payment towards Principal (Pmonthly) as prompted in application.(Entire details are provided in Architecture.) So the initial monthly interest will be levied as per the Principal (P) loan amount taken.  
 
 - While designing following assumptions are taken:
