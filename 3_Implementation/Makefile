@@ -4,6 +4,18 @@ PROJECT_NAME = loanCalculator
 # Output directory
 BUILD = build
 
+#To check if the OS is windows or linux and set the executable file extension and delete command accordingly
+ifdef OS
+   RM = del /q
+   FixPath = $(subst /,\,$1)
+   EXEC = exe
+else
+   ifeq ($(shell uname), Linux)
+      RM = rm -rf
+      FixPath = $1
+	  EXEC = out
+   endif
+endif
 # All source code files
 SRC = main.c\
 src/loanFunctions.c
@@ -13,7 +25,7 @@ TEST_SRC = src/loanFunctions.c\
 test/test_loanCalculator.c\
 Unity/unity.c\
 
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+TEST_OUTPUT =  $(BUILD)/Test_$(PROJECT_NAME)
 
 # All include folders with header files
 INC	= -Iinc\
@@ -38,11 +50,11 @@ $(PROJECT_NAME):all
 .PHONY: run clean test doc all
 
 all: $(SRC) $(BUILD)
-	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out -lm
+	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).$(EXEC) -lm
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
-	./$(PROJECT_OUTPUT).out 
+	./$(PROJECT_OUTPUT).$(EXEC) 
 
 # Document the code using Doxygen
 doc:
@@ -52,10 +64,19 @@ doc:
 test:$(BUILD)
 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) -lm
 	./$(TEST_OUTPUT)
+#testing covergae
+coverage:$(BUILD)
+	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(BUILD)/aout.$(EXEC)
+	$(BUILD)/aout.$(EXEC)
+	gcov -a test_loanCalculator.gcno
+	$(RM) *.gcda
+	$(RM) *.gcno
+	$(RM) *c.gcov
+
 
 # Remove all the built files, invoke by `make clean`
 clean:
-	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
+	$(RM) $(BUILD) $(DOCUMENTATION_OUTPUT)
 
 # Create new build folder if not present
 $(BUILD):
