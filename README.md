@@ -28,8 +28,8 @@ Folder             | Description
 
 ## Contributors List and Summary
 
-SF Id.    |      Name        |  Language Used   | Requirements |   Design   | Implementation | Report    
-----------|------------------|------------------|--------------|------------|----------------|----------
-`260056`  | Shubham Tharval  |       C          |   DONE |  pending...|       DONE     |  DONE
+SF Id.    |      Name        |  Language Used   | Requirements | Architecture Design |   Test Plan    | Implementation | Report  
+----------|------------------|------------------|--------------|---------------------|----------------|----------------|--------
+`260056`  | Shubham Tharval  |       C          |       DONE   |        DONE         |    Pending     |      DONE      | DONE
 
 ### Github Repo ID - miniProject_stepIn_260056
