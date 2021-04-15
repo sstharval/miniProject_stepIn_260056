@@ -12,14 +12,10 @@ test/test_loanCalculator.c:26:test_everyMonthInstallment:PASS
 OK
  */
 
-#include "../Unity/unity.h"
-<<<<<<< HEAD
-#include <math.h>
-=======
->>>>>>> 8ab7b246521fdca97d1916cc7ee2fae4484080a9
-
+#include "../unity/unity.h"
+#include "../unity/unity_internals.h"
 /* Modify these two lines according to the project */
-#include <loanFunctions.h>
+#include <../inc/loanFunctions.h>
 #define PROJECT_NAME    "loanCalculator"
 
 /* Prototypes for all the test functions */
