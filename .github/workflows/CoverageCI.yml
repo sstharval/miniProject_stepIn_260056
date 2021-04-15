@@ -22,16 +22,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install gcov 
       run: sudo apt -y install gcovr
-    - name: make coverage1
-      run: make -C 3_Implementation/ coverage1
+    - name: make coverage
+      run: make -C 3_Implementation/ coverage
 
 
-##############################
 
-coverage:$(BUILD)
-	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(BUILD)/aout.$(EXEC)
-	$(BUILD)/aout.$(EXEC)
-	gcov -a test_loanCalculator.gcno
-	$(RM) *.gcda
-	$(RM) *.gcno
-	$(RM) *c.gcov
