@@ -30,6 +30,6 @@ Folder             | Description
 
 SF Id.    |      Name        |  Language Used   | Requirements |   Design   | Implementation | Report    
 ----------|------------------|------------------|--------------|------------|----------------|----------
-`260056`  | Shubham Tharval  |       C          |   pending... |  pending...|       DONE     |  DONE
+`260056`  | Shubham Tharval  |       C          |   DONE |  pending...|       DONE     |  DONE
 
 ### Github Repo ID - miniProject_stepIn_260056
