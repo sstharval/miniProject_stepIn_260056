@@ -70,22 +70,26 @@ int main(){
     switch(toupper(choice[0])){
         case 'A':
             puts("Your Monthly Installment  = ");
+            float totalSum_compound = 0;
             filePTR_compound = fopen("output/Installment_compound.csv", "w+");
             fprintf(filePTR_compound , "Month, Interest Paid(A), Principal Paid(B), EMI(A+B), Principal Pending\n");
             for(int countPrintLoop = 1 ; countPrintLoop <= totalMonths; countPrintLoop++){
                 monthlyInterest = perMonth_interest * principalAmount;
                 printf(" Month No.\t: %d\n Amount Towards Principal(Enter 0 if no amount)\t=  ", countPrintLoop);
                 scanf("%f", &principalPayment);
+                totalSum_compound = totalSum_compound + principalPayment + monthlyInterest;
                 principalRemaining = principalAmount - principalPayment;
                 fprintf(filePTR_compound," %d, %f, %f, %f, %f \n ", countPrintLoop, round(monthlyInterest), round(principalPayment), round(monthlyInterest), round(principalRemaining) );                    
                 principalAmount = principalRemaining;
             }
+            printf("\n You will pay a total of Rs = %f  towards loan repayment by Traditional Compound Interest Method \n", totalSum_compound + principalAmount);
             printf("\nAfter the entire tenure of \t %d\t  months, you must pay Rs. \t %f \t to complete your loan \n" , totalMonths, principalAmount);
             fclose(filePTR_compound);
 
             break;
         case 'B':   ;
             float principalPay_perMonth = 0;
+            float totalSum_amort = 0;
             puts("Your Monthly Installment  = ");
             filePTR_amortized = fopen("output/Installment_amortized.csv", "w+");
             fprintf(filePTR_amortized , "Month, Interest Paid(A), Principal Paid(B), EMI(A+B), Principal Pending\n");
@@ -95,9 +99,11 @@ int main(){
                 monthlyInterest = perMonth_interest * principalAmount ;
                 principalPay_perMonth = loanInstallment - monthlyInterest ;
                 principalRemaining = principalAmount - principalPay_perMonth;
+                totalSum_amort = totalSum_amort + loanInstallment;
                 principalAmount = round(principalRemaining);
                 fprintf(filePTR_amortized," %d, %f, %f, %f, %f \n ", countPrintLoop, round(monthlyInterest), round(principalPay_perMonth), round(loanInstallment), round(principalRemaining) );               
             }
+            printf("\n You will pay a total of Rs = %f  towards loan repayment by Amortized Method \n", totalSum_amort + principalAmount);
             fclose(filePTR_amortized);
             printf("\nAfter the entire tenure of \t %d\t  months, you must pay Rs. \t %f \t to complete your loan \n" , totalMonths, principalAmount);
 
