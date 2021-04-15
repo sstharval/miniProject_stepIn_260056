@@ -48,7 +48,7 @@ Benefits range from:
 
 ## SWOT Analysis 
 
-![SWOTAnalysis](https://github.com/sstharval/miniProject_stepIn_260056/blob/f05e01409838e1752c6ccb0e9ea0bef7e3439517/1_Requirements/SWOT_new.png)
+![SWOTAnalysis](https://github.com/sstharval/miniProject_stepIn_260056/blob/9deb8410bc60d171e88572253939d5bf6c9ebb65/6_ImagesAndVideos/SWOTupdated.png)
 
 # 4W&#39;s and 1&#39;H
 
