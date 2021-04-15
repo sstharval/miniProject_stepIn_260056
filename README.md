@@ -16,7 +16,7 @@
     -   **Amortization Method** :   In this approach, the lender requires the loanee to pay the interest as well as principal in equal monthly installments (EMI). This is widely used method.
 
 ## Code Quality Badges
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9b236e391dcf450898fc9494f981bb54)](https://www.codacy.com/gh/sstharval/miniProject_stepIn_260056/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sstharval/miniProject_stepIn_260056&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/9b236e391dcf450898fc9494f981bb54)](https://www.codacy.com/gh/sstharval/miniProject_stepIn_260056/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sstharval/miniProject_stepIn_260056&amp;utm_campaign=Badge_Grade) | [![Code Quality - Static Code - Cppcheck](https://github.com/sstharval/miniProject_stepIn_260056/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/sstharval/miniProject_stepIn_260056/actions/workflows/cppcheck.yml)
 
 ## Folder Structure
 Folder             | Description
