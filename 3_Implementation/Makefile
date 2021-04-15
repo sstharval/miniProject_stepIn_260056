@@ -66,7 +66,7 @@ test:$(BUILD)
 	./$(TEST_OUTPUT)
 #testing covergae
 coverage:$(BUILD)
-	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(BUILD)/aout.$(EXEC)
+	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(BUILD)/aout.$(EXEC) -lm
 	$(BUILD)/aout.$(EXEC)
 	gcov -a test_loanCalculator.gcno
 	$(RM) *.gcda
